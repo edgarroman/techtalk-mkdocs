@@ -1,6 +1,5 @@
 # Static Documentation and Github
 
-## this thiscnages! 
 ## Github Pages
 
  * Ability to host any static files in a github repository. 
