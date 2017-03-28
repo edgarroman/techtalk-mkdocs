@@ -1,0 +1,79 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Static Documentation and Github\n\n\nGithub Pages\n\n\n\n\nAbility to host any static files in a github repository. \n\n\nSimilar to S3 but free\n\n\nSeveral Options:\n\n\nUse \ngh-pages\n branch \n\n\nUse \nmaster\n branch \n\n\nUse \ndocs\n directory on \nmaster\n branch\n\n\nURL format is: \n  \nhttps://<username or organization>.github.io/<project name>\n\n\nAllowed to have custom domain easily - just point your DNS\n\n\nCan put stuff at \n  \nhttps://<username or organization>.github.io/\n\n  by creating a project named after the organization or user.\n\n\n\n\nBasics\n\n\nMarkdown\n\n\n\n\nDefacto Standard\n\n\nBut not really standardized (e.g. Github-flavored Markdown)\n\n\nLearn it\n\n\nQuick Examples\n\n\nhttps://jbt.github.io/markdown-editor/\n\n\nhttps://stackedit.io/editor\n\n\n\n\nEditors\n\n\n\n\nhttps://jbt.github.io/markdown-editor/\n\n\nhttps://stackedit.io/editor\n\n\nMacdown\n\n\nVSCode\n\n\nPlugins for Sublime, etc\n\n\nInfinite others\n\n\n\n\nApproaches\n\n\n\n\nWrite Markdown source, compile/build it, upload HTML\n\n\nWrite Markdown source, upload raw, have JS render on the fly\n\n\nSome critical of this approach\n\n\nOnly found one realistic framework that is a bit old: \nFlatdoc\n\n\nhttps://edgarroman.github.io/doctest-flatdoc/\n\n\n\n\n\n\n\n\nWill be focusing on \noption 1 above\n\n\nHow it works (option 1)\n\n\nOne-time setup of github pages (Easiest to create the \ngh-pages\n branch.  Autodetected by github).  Then:\n\n\n\n\nWrite source material in markdown\n\n\nCheck source material into the \nmaster\n branch\n\n\nRun a build on the source material to render material\n\n\nCheck in rendered material into the \ngh-pages\n branch\n\n\nRinse, Repeat\n\n\n\n\nIf you're really cool, then you will have a CI system do your build for you.  But if you're cheap (like me), just do it manually (Lazy!  SAD!)\n\n\nFrameworks\n\n\nTons\n Pretty good list: \nhttps://www.staticgen.com/\n\n\nPretty much any language you want: Python, .NET, Go, PHP - even non languages like Javascript!\n\n\n\n\nSome are better for blogs: Have fancy tag clouds and 'most recent' widgets\n\n\nSome are just straight up pages: More general documentation\n\n\nSome are focused on API: But swagger would probably be a better choice\n\n\n\n\nCriteria for this talk\n\n\n\n\nGeneral Static Page (non-blog)\n\n\nMinimal install overhead (e.g. only Python)\n\n\nGood Documentation\n\n\nReasonably good looking output\n\n\nSimple\n\n\n\n\nBest frameworks\n\n\n\n\nmkdocs\n\n\n\n\nOthers:\n\n\n\n\nCactus\n - Bad docs\n\n\nSphinx\n - Complicated\n\n\nGitbook\n - Corporate pig dogs\n\n\nJekyll\n - Don't know how to use ruby\n\n\nHyde\n - Terrible documentation\n\n\n\n\nMKDocs Walkthrough\n\n\n\n\nCreate Repo\n\n\nInstall mkdocs\n    \nvirtualenv ve\n    source ve/bin/activate\n    pip install mkdocs\n\n\nInit the mkdocs project\n    \nmkdocs new .\n\n\nCustomize mkdocs.yml\n   ```\n   site_name: Mkdocs overview\n   pages:\n\n\nHome: 'README.md'\n   ```\n\n\n\n\n\n\nAdd / Edit pages\n\n\nRun local server\n   \nmkdocs serve\n\n\nEdit and revise\n\n\nCommit and push source to github\n\n\nDeploy to gh-pages\n   \nmkdocs gh-deploy\n\n\nProfit\n\n\n\n\nAdvanced\n\n\nThemes\n\n\nsite_name: Mkdocs overview\n   pages:\n     - Home: 'README.md'\n   theme: readthedocs\n\n\nExtensions\n\n\n\n\n\n\nAny pyMdown extensions\n  \npip install pymdown-extensions\n\n\n\n\n\n\nhttp://facelessuser.github.io/pymdown-extensions/\n\n\n\n\n\n\nsite_name: Mkdocs overview\n   pages:\n     - Home: 'README.md'\n   markdown_extensions:\n     - pymdownx.superfences",
+            "title": "Home"
+        },
+        {
+            "location": "/#static-documentation-and-github",
+            "text": "",
+            "title": "Static Documentation and Github"
+        },
+        {
+            "location": "/#github-pages",
+            "text": "Ability to host any static files in a github repository.   Similar to S3 but free  Several Options:  Use  gh-pages  branch   Use  master  branch   Use  docs  directory on  master  branch  URL format is: \n   https://<username or organization>.github.io/<project name>  Allowed to have custom domain easily - just point your DNS  Can put stuff at \n   https://<username or organization>.github.io/ \n  by creating a project named after the organization or user.",
+            "title": "Github Pages"
+        },
+        {
+            "location": "/#basics",
+            "text": "",
+            "title": "Basics"
+        },
+        {
+            "location": "/#markdown",
+            "text": "Defacto Standard  But not really standardized (e.g. Github-flavored Markdown)  Learn it  Quick Examples  https://jbt.github.io/markdown-editor/  https://stackedit.io/editor",
+            "title": "Markdown"
+        },
+        {
+            "location": "/#editors",
+            "text": "https://jbt.github.io/markdown-editor/  https://stackedit.io/editor  Macdown  VSCode  Plugins for Sublime, etc  Infinite others",
+            "title": "Editors"
+        },
+        {
+            "location": "/#approaches",
+            "text": "Write Markdown source, compile/build it, upload HTML  Write Markdown source, upload raw, have JS render on the fly  Some critical of this approach  Only found one realistic framework that is a bit old:  Flatdoc  https://edgarroman.github.io/doctest-flatdoc/     Will be focusing on  option 1 above",
+            "title": "Approaches"
+        },
+        {
+            "location": "/#how-it-works-option-1",
+            "text": "One-time setup of github pages (Easiest to create the  gh-pages  branch.  Autodetected by github).  Then:   Write source material in markdown  Check source material into the  master  branch  Run a build on the source material to render material  Check in rendered material into the  gh-pages  branch  Rinse, Repeat   If you're really cool, then you will have a CI system do your build for you.  But if you're cheap (like me), just do it manually (Lazy!  SAD!)",
+            "title": "How it works (option 1)"
+        },
+        {
+            "location": "/#frameworks",
+            "text": "Tons  Pretty good list:  https://www.staticgen.com/  Pretty much any language you want: Python, .NET, Go, PHP - even non languages like Javascript!   Some are better for blogs: Have fancy tag clouds and 'most recent' widgets  Some are just straight up pages: More general documentation  Some are focused on API: But swagger would probably be a better choice",
+            "title": "Frameworks"
+        },
+        {
+            "location": "/#criteria-for-this-talk",
+            "text": "General Static Page (non-blog)  Minimal install overhead (e.g. only Python)  Good Documentation  Reasonably good looking output  Simple",
+            "title": "Criteria for this talk"
+        },
+        {
+            "location": "/#best-frameworks",
+            "text": "mkdocs   Others:   Cactus  - Bad docs  Sphinx  - Complicated  Gitbook  - Corporate pig dogs  Jekyll  - Don't know how to use ruby  Hyde  - Terrible documentation",
+            "title": "Best frameworks"
+        },
+        {
+            "location": "/#mkdocs-walkthrough",
+            "text": "Create Repo  Install mkdocs\n     virtualenv ve\n    source ve/bin/activate\n    pip install mkdocs  Init the mkdocs project\n     mkdocs new .  Customize mkdocs.yml\n   ```\n   site_name: Mkdocs overview\n   pages:  Home: 'README.md'\n   ```    Add / Edit pages  Run local server\n    mkdocs serve  Edit and revise  Commit and push source to github  Deploy to gh-pages\n    mkdocs gh-deploy  Profit",
+            "title": "MKDocs Walkthrough"
+        },
+        {
+            "location": "/#advanced",
+            "text": "",
+            "title": "Advanced"
+        },
+        {
+            "location": "/#themes",
+            "text": "site_name: Mkdocs overview\n   pages:\n     - Home: 'README.md'\n   theme: readthedocs",
+            "title": "Themes"
+        },
+        {
+            "location": "/#extensions",
+            "text": "Any pyMdown extensions\n   pip install pymdown-extensions    http://facelessuser.github.io/pymdown-extensions/    site_name: Mkdocs overview\n   pages:\n     - Home: 'README.md'\n   markdown_extensions:\n     - pymdownx.superfences",
+            "title": "Extensions"
+        }
+    ]
+}

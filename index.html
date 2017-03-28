@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+        <title>Tech Talk - MKDOCS</title>
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href=".">Tech Talk - MKDOCS</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#static-documentation-and-github">Static Documentation and Github</a></li>
+            <li><a href="#github-pages">Github Pages</a></li>
+            <li><a href="#basics">Basics</a></li>
+            <li><a href="#approaches">Approaches</a></li>
+            <li><a href="#frameworks">Frameworks</a></li>
+            <li><a href="#mkdocs-walkthrough">MKDocs Walkthrough</a></li>
+            <li><a href="#advanced">Advanced</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="static-documentation-and-github">Static Documentation and Github</h1>
+<h2 id="github-pages">Github Pages</h2>
+<ul>
+<li>Ability to host any static files in a github repository. </li>
+<li>Similar to S3 but free</li>
+<li>Several Options:</li>
+<li>Use <code>gh-pages</code> branch </li>
+<li>Use <code>master</code> branch </li>
+<li>Use <code>docs</code> directory on <code>master</code> branch</li>
+<li>URL format is: 
+  <code>https://&lt;username or organization&gt;.github.io/&lt;project name&gt;</code></li>
+<li>Allowed to have custom domain easily - just point your DNS</li>
+<li>Can put stuff at 
+  <code>https://&lt;username or organization&gt;.github.io/</code>
+  by creating a project named after the organization or user.</li>
+</ul>
+<h2 id="basics">Basics</h2>
+<h3 id="markdown">Markdown</h3>
+<ul>
+<li>Defacto Standard</li>
+<li>But not really standardized (e.g. Github-flavored Markdown)</li>
+<li>Learn it</li>
+<li>Quick Examples</li>
+<li><a href="https://jbt.github.io/markdown-editor/">https://jbt.github.io/markdown-editor/</a></li>
+<li><a href="https://stackedit.io/editor">https://stackedit.io/editor</a></li>
+</ul>
+<h4 id="editors">Editors</h4>
+<ul>
+<li><a href="https://jbt.github.io/markdown-editor/">https://jbt.github.io/markdown-editor/</a></li>
+<li><a href="https://stackedit.io/editor">https://stackedit.io/editor</a></li>
+<li><a href="https://macdown.uranusjr.com/">Macdown</a></li>
+<li><a href="https://code.visualstudio.com/">VSCode</a></li>
+<li>Plugins for Sublime, etc</li>
+<li>Infinite others</li>
+</ul>
+<h2 id="approaches">Approaches</h2>
+<ol>
+<li>Write Markdown source, compile/build it, upload HTML</li>
+<li>Write Markdown source, upload raw, have JS render on the fly</li>
+<li><a href="http://stackoverflow.com/questions/22793883/parse-markdown-on-the-fly">Some critical of this approach</a></li>
+<li>Only found one realistic framework that is a bit old: <a href="http://ricostacruz.com/flatdoc/#flatdoc">Flatdoc</a><ul>
+<li><a href="https://edgarroman.github.io/doctest-flatdoc/">https://edgarroman.github.io/doctest-flatdoc/</a></li>
+</ul>
+</li>
+</ol>
+<p>Will be focusing on <strong>option 1 above</strong></p>
+<h3 id="how-it-works-option-1">How it works (option 1)</h3>
+<p>One-time setup of github pages (Easiest to create the <code>gh-pages</code> branch.  Autodetected by github).  Then:</p>
+<ol>
+<li>Write source material in markdown</li>
+<li>Check source material into the <code>master</code> branch</li>
+<li>Run a build on the source material to render material</li>
+<li>Check in rendered material into the <code>gh-pages</code> branch</li>
+<li>Rinse, Repeat</li>
+</ol>
+<p>If you're really cool, then you will have a CI system do your build for you.  But if you're cheap (like me), just do it manually (Lazy!  SAD!)</p>
+<h2 id="frameworks">Frameworks</h2>
+<p><strong>Tons</strong> Pretty good list: <a href="https://www.staticgen.com/">https://www.staticgen.com/</a></p>
+<p>Pretty much any language you want: Python, .NET, Go, PHP - even non languages like Javascript!</p>
+<ul>
+<li>Some are better for blogs: Have fancy tag clouds and 'most recent' widgets</li>
+<li>Some are just straight up pages: More general documentation</li>
+<li>Some are focused on API: But swagger would probably be a better choice</li>
+</ul>
+<h3 id="criteria-for-this-talk">Criteria for this talk</h3>
+<ol>
+<li>General Static Page (non-blog)</li>
+<li>Minimal install overhead (e.g. only Python)</li>
+<li>Good Documentation</li>
+<li>Reasonably good looking output</li>
+<li>Simple</li>
+</ol>
+<h3 id="best-frameworks">Best frameworks</h3>
+<ol>
+<li><a href="http://www.mkdocs.org/">mkdocs</a></li>
+</ol>
+<p>Others:</p>
+<ul>
+<li><a href="https://github.com/eudicots/Cactus">Cactus</a> - Bad docs</li>
+<li><a href="http://www.sphinx-doc.org/en/stable/index.html">Sphinx</a> - Complicated</li>
+<li><a href="https://www.gitbook.com/">Gitbook</a> - Corporate pig dogs</li>
+<li><a href="https://jekyllrb.com/">Jekyll</a> - Don't know how to use ruby</li>
+<li><a href="http://hyde.github.io">Hyde</a> - Terrible documentation</li>
+</ul>
+<h2 id="mkdocs-walkthrough">MKDocs Walkthrough</h2>
+<ol>
+<li>Create Repo</li>
+<li>Install mkdocs
+    <code>virtualenv ve
+    source ve/bin/activate
+    pip install mkdocs</code></li>
+<li>Init the mkdocs project
+    <code>mkdocs new .</code></li>
+<li>Customize mkdocs.yml
+   ```
+   site_name: Mkdocs overview
+   pages:<ul>
+<li>Home: 'README.md'
+   ```</li>
+</ul>
+</li>
+<li>Add / Edit pages</li>
+<li>Run local server
+   <code>mkdocs serve</code></li>
+<li>Edit and revise</li>
+<li>Commit and push source to github</li>
+<li>Deploy to gh-pages
+   <code>mkdocs gh-deploy</code></li>
+<li>Profit</li>
+</ol>
+<h2 id="advanced">Advanced</h2>
+<h3 id="themes">Themes</h3>
+<p><code>site_name: Mkdocs overview
+   pages:
+     - Home: 'README.md'
+   theme: readthedocs</code></p>
+<h3 id="extensions">Extensions</h3>
+<ul>
+<li>
+<p>Any pyMdown extensions
+  <code>pip install pymdown-extensions</code></p>
+</li>
+<li>
+<p><a href="http://facelessuser.github.io/pymdown-extensions/">http://facelessuser.github.io/pymdown-extensions/</a></p>
+</li>
+</ul>
+<p><code>site_name: Mkdocs overview
+   pages:
+     - Home: 'README.md'
+   markdown_extensions:
+     - pymdownx.superfences</code></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.16.2
+Build Date UTC : 2017-03-28 16:31:24
+-->
