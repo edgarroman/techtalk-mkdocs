@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="./img/favicon.ico">
-        <title>Tech Talk - MKDOCS</title>
+        <title>Tech Talk - Using Github pages with Mkdocs</title>
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="./css/base.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            <a class="navbar-brand" href=".">Tech Talk - MKDOCS</a>
+            <a class="navbar-brand" href=".">Tech Talk - Using Github pages with Mkdocs</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -52,6 +52,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#static-documentation-and-github">Static Documentation and Github</a></li>
+            <li><a href="#this-thiscnages">this thiscnages!</a></li>
             <li><a href="#github-pages">Github Pages</a></li>
             <li><a href="#basics">Basics</a></li>
             <li><a href="#approaches">Approaches</a></li>
@@ -63,6 +64,7 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="static-documentation-and-github">Static Documentation and Github</h1>
+<h2 id="this-thiscnages">this thiscnages!</h2>
 <h2 id="github-pages">Github Pages</h2>
 <ul>
 <li>Ability to host any static files in a github repository. </li>
@@ -72,7 +74,7 @@
 <li>Use <code>master</code> branch </li>
 <li>Use <code>docs</code> directory on <code>master</code> branch</li>
 <li>URL format is: 
-  <code>https://&lt;username or organization&gt;.github.io/&lt;project name&gt;</code></li>
+  <pre class="highlight"><code class="linenums">https://&lt;username or organization&gt;.github.io/&lt;project name&gt;</code></pre></li>
 <li>Allowed to have custom domain easily - just point your DNS</li>
 <li>Can put stuff at 
   <code>https://&lt;username or organization&gt;.github.io/</code>
@@ -150,49 +152,46 @@
 <ol>
 <li>Create Repo</li>
 <li>Install mkdocs
-    <code>virtualenv ve
-    source ve/bin/activate
-    pip install mkdocs</code></li>
+    <pre class="highlight"><code class="linenums">virtualenv ve
+source ve/bin/activate
+pip install mkdocs</code></pre></li>
 <li>Init the mkdocs project
-    <code>mkdocs new .</code></li>
+    <pre class="highlight"><code class="linenums">mkdocs new .</code></pre></li>
 <li>Customize mkdocs.yml
-   ```
-   site_name: Mkdocs overview
-   pages:<ul>
-<li>Home: 'README.md'
-   ```</li>
-</ul>
-</li>
+   <pre class="highlight"><code class="linenums">site_name: Mkdocs overview
+pages:
+  - Home: 'README.md'</code></pre></li>
 <li>Add / Edit pages</li>
 <li>Run local server
-   <code>mkdocs serve</code></li>
+   <pre class="highlight"><code class="linenums">mkdocs serve</code></pre></li>
 <li>Edit and revise</li>
 <li>Commit and push source to github</li>
 <li>Deploy to gh-pages
-   <code>mkdocs gh-deploy</code></li>
+   <pre class="highlight"><code class="linenums">mkdocs gh-deploy</code></pre></li>
 <li>Profit</li>
 </ol>
 <h2 id="advanced">Advanced</h2>
 <h3 id="themes">Themes</h3>
-<p><code>site_name: Mkdocs overview
-   pages:
-     - Home: 'README.md'
-   theme: readthedocs</code></p>
+<pre class="highlight"><code class="linenums">site_name: Mkdocs overview
+pages:
+  - Home: 'README.md'
+theme: readthedocs</code></pre>
+
 <h3 id="extensions">Extensions</h3>
 <ul>
 <li>
 <p>Any pyMdown extensions
-  <code>pip install pymdown-extensions</code></p>
+  <pre class="highlight"><code class="linenums">pip install pymdown-extensions</code></pre></p>
 </li>
 <li>
 <p><a href="http://facelessuser.github.io/pymdown-extensions/">http://facelessuser.github.io/pymdown-extensions/</a></p>
 </li>
 </ul>
-<p><code>site_name: Mkdocs overview
-   pages:
-     - Home: 'README.md'
-   markdown_extensions:
-     - pymdownx.superfences</code></p></div>
+<pre class="highlight"><code class="linenums">site_name: Mkdocs overview
+pages:
+  - Home: 'README.md'
+markdown_extensions:
+  - pymdownx.superfences</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -231,5 +230,5 @@
 
 <!--
 MkDocs version : 0.16.2
-Build Date UTC : 2017-03-28 16:31:24
+Build Date UTC : 2017-03-28 16:53:39
 -->
