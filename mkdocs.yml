@@ -1,0 +1,3 @@
+site_name: Tech Talk - Using Github pages with Mkdocs
+markdown_extensions:
+     - pymdownx.superfences
