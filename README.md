@@ -1,5 +1,7 @@
 # Static Documentation and Github
 
+**See this page on github pages at: [https://edgarroman.github.io/techtalk-mkdocs/](https://edgarroman.github.io/techtalk-mkdocs/)**
+
 ## Github Pages 
 
  * Ability to host any static files in a github repository. 
