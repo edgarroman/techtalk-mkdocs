@@ -14,7 +14,8 @@
   ```
 * Allowed to have custom domain easily - just point your DNS
 * Can put stuff at 
-  ```https://<username or organization>.github.io/
+  ```
+  https://<username or organization>.github.io/
   ```
   by creating a project named after the organization or user.
   

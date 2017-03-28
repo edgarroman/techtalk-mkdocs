@@ -1,7 +1,6 @@
 # Static Documentation and Github
 
-
-## Github Pages
+## Github Pages 
 
  * Ability to host any static files in a github repository. 
  * Similar to S3 but free
